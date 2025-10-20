@@ -15,25 +15,6 @@ require_once get_template_directory() . '/inc/helpers/template-tags.php';
 require_once get_template_directory() . '/inc/helpers/security.php';
 
 
-add_action('after_setup_theme', 'mytheme_check_required_plugins');
-function mytheme_check_required_plugins() {
-    $required_plugins = [
-        'woocommerce/woocommerce.php',
-        'elementor/elementor.php'
-    ];
-
-    foreach ($required_plugins as $plugin) {
-        if (!is_plugin_active($plugin)) {
-            deactivate_plugins(wp_get_theme()->get('TextDomain'));
-            wp_die(
-                '<h2>افزونه‌های ضروری فعال نیستند!</h2><p>لطفاً المنتور و ووکامرس را فعال کنید.</p>',
-                'خطا در فعال‌سازی قالب',
-                ['back_link' => true]
-            );
-        }
-    }
-}
-
 
 /**
  * Functions for MyTheme Child
