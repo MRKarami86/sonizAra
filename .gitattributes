@@ -1,0 +1,9 @@
+# Auto normalize line endings
+* text=auto
+
+# Exclude unnecessary files when generating .zip
+/.gitignore export-ignore
+/.gitattributes export-ignore
+/README.md export-ignore
+/LICENSE.md export-ignore
+/package.json export-ignore
